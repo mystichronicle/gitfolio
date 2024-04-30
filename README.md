@@ -1,7 +1,7 @@
-# github-projects
+# gitfolio
 Website showing all of my GitHub projects
 
-Live at https://gitfolio.debjit-mandal.com
+Live at https://debjit-mandal.github.io/gitfolio/
 
 It is a fork from https://github.com/imfunniee/gitfolio
 
