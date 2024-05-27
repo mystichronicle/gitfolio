@@ -1,0 +1,12 @@
+{
+    "name": "gitfolio",
+    "version": "1.0.0",
+    "description": "Automatically update your GitHub portfolio",
+    "main": "update.js",
+    "scripts": {
+        "update": "node update.js"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.1"
+    }
+}
