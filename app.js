@@ -1,9 +1,8 @@
 async function fetchProjects() {
-    const response = await fetch('https://api.github.com/users/debjit-mandal/repos');
+    const response = await fetch('https://api.github.com/users/tensorgenius/repos');
     const repos = await response.json();
     displayProjects(repos);
-
-    // Add event listener for search functionality
+    
     const searchInput = document.getElementById('search');
     searchInput.addEventListener('input', function () {
         filterProjects(repos, searchInput.value);
@@ -12,7 +11,7 @@ async function fetchProjects() {
 
 function displayProjects(repos) {
     const projectContainer = document.getElementById('projects');
-    projectContainer.innerHTML = ''; // Clear existing content
+    projectContainer.innerHTML = ''; 
     repos.forEach(repo => {
         const projectElement = document.createElement('div');
         projectElement.className = 'project';
