@@ -2,12 +2,29 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 
 async function fetchProjects() {
-    const response = await fetch('https://api.github.com/users/debjit-mandal/repos');
-    return await response.json();
+    try {
+        const response = await fetch('https://api.github.com/users/tensorgenius/repos');
+        const data = await response.json();
+
+        
+        if (!Array.isArray(data)) {
+            throw new Error(`Expected an array but received: ${JSON.stringify(data)}`);
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Error fetching GitHub repositories:", error);
+        return []; 
+    }
 }
 
 async function updateProjects() {
     const repos = await fetchProjects();
+    if (repos.length === 0) {
+        console.error("No repositories fetched.");
+        return;
+    }
+
     let projectHTML = '';
 
     repos.forEach(repo => {
@@ -43,13 +60,14 @@ async function updateProjects() {
         </main>
         <footer>
             <div class="container">
-                <p>&copy; 2024 Debjit Mandal | <a href="https://github.com/debjit-mandal" target="_blank"><i class="fab fa-github"></i></a></p>
+                <p>&copy; 2024 Debjit Mandal | <a href="https://github.com/tensorgenius" target="_blank"><i class="fab fa-github"></i></a></p>
             </div>
         </footer>
         <script src="app.js"></script>
     </body>
     </html>`;
 
+    
     fs.writeFileSync('index.html', htmlContent);
 }
 
