@@ -1,5 +1,5 @@
 async function fetchProjects() {
-    const response = await fetch('https://api.github.com/users/tensorgenius/repos');
+    const response = await fetch('https://api.github.com/users/opulentloop/repos');
     const repos = await response.json();
     displayProjects(repos);
     
