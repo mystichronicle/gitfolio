@@ -1,5 +1,5 @@
 async function fetchProjects() {
-    const response = await fetch('https://api.github.com/users/mysticdebjit/repos');
+    const response = await fetch('https://api.github.com/users/mystichronicle/repos');
     const repos = await response.json();
     displayProjects(repos);
     

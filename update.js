@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 async function fetchProjects() {
     try {
-        const response = await fetch('https://api.github.com/users/mysticdebjit/repos');
+        const response = await fetch('https://api.github.com/users/mystichronicle/repos');
         const data = await response.json();
 
         
@@ -60,7 +60,7 @@ async function updateProjects() {
         </main>
         <footer>
             <div class="container">
-                <p>&copy; 2024 Debjit Mandal | <a href="https://github.com/mysticdebjit" target="_blank"><i class="fab fa-github"></i></a></p>
+                <p>&copy; 2024 Debjit Mandal | <a href="https://github.com/mystichronicle" target="_blank"><i class="fab fa-github"></i></a></p>
             </div>
         </footer>
         <script src="app.js"></script>
